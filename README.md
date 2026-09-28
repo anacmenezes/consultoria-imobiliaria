@@ -45,11 +45,11 @@ Primeiro você deve clonar o repositório:
 # Clone o repositório
 git clone https://github.com/anacmenezes/consultoria-imobiliaria.git
 ```
-```
+```bash
 # Acesse o projeto
 cd consultoria-imobiliaria
 ```
-```
+```bash
 # Crie o ambiente virtual
 python -m venv .venv
 ```

@@ -1,194 +1,85 @@
-# 🏠 Consultoria Imobiliária Multiagente
+<h1>Consultoria Imobiliária - Multiagente</h1>
 
-Sistema de consultoria imobiliária desenvolvido em Python utilizando **CrewAI**, com uma arquitetura multiagente formada por especialistas responsáveis por busca de imóveis, análise de mercado, análise de notícias, análise financeira e geração do relatório final.
+<p align="center">
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#practices-adopted">Práticas adotadas</a> •
+  <a href="#pre-requisites">Requisitos</a> •
+  <a href="#how-to-Installing">Instalando o projeto</a> •
+  <a href="#how-to-use">Como executar</a> •
+  <a href="#architecture">Arquitetura</a>
+</p>
 
-O projeto foi estruturado de forma modular, separando **Agents, Tasks, Tools, dados e orquestração**, permitindo evolução futura para RAG, memória, validação e observabilidade.
+Essa aplicação foi desenvolvida utilizando Python e CrewAI para criação de um sistema de consultoria imobiliária baseado em arquitetura multiagente.
+O sistema utiliza agentes especializados para buscar imóveis, analisar o mercado imobiliário, pesquisar notícias, realizar análises financeiras e gerar uma resposta consolidada para o cliente.
 
----
+<h2 id="tecnologias">🔌 Tecnologias </h2>
 
-## 🚀 Sobre o Projeto
+- [Python](https://www.python.org/)
+- [CrewAI](https://www.crewai.com/)
+- [Pandas](https://pandas.pydata.org/)
+- [DDGS](https://pypi.org/project/ddgs/)
+- [OpenAI API](https://platform.openai.com/)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
 
-A aplicação simula uma equipe de especialistas em mercado imobiliário.
-O usuário informa uma cidade e o sistema executa um fluxo multiagente para:
+<h2 id="practices-adopted">📖 Práticas adotadas </h2>
 
-- 🔎 Buscar imóveis disponíveis
-- 📊 Analisar características e preços
-- 📰 Pesquisar notícias relacionadas ao mercado imobiliário
-- 💰 Realizar análise financeira
-- 📝 Consolidar as informações em uma resposta final
+- Arquitetura Multiagente
+- Separação entre Agents, Tasks e Tools
+- Orquestração de agentes com CrewAI
+- Desenvolvimento modular
+- Testes individuais dos componentes
+- Integração de ferramentas externas
 
-O objetivo é demonstrar na prática conceitos de **Engenharia de IA, sistemas multiagentes, ferramentas, orquestração e passagem de contexto entre agentes**.
+<h2 id="pre-requisites">💻 Requisitos</h2>
 
----
+Para rodar esse projeto você precisa ter o Python instalado na sua máquina. Também é necessário possuir uma chave de API da OpenAI.
 
-## 🛠️ Tecnologias
-- Python
-- CrewAI
-- CrewAI Tools
-- Pandas
-- DDGS
-- OpenAI API
-- python-dotenv
-- CSV
+- Python 3.10+
+- OpenAI API Key
 
----
+<h2 id="how-to-Installing"> 🚀 Instalando o projeto</h2>
 
-## 🔄 Fluxo de Execução
+Primeiro você deve clonar o repositório:
 
-              1. Cliente informa a cidade
-                          ↓
-              2. Corretor consulta os imóveis
-                          ↓
-              3. Analista de Mercado analisa os imóveis
-                          ↓
-              4. Analista de Notícias pesquisa informações
-                          ↓
-              5. Analista Financeiro realiza a análise
-                          ↓
-              6. Redator recebe os resultados
-                          ↓
-              7. Sistema gera a resposta final
+bash
+# Clone o repositório
+$ git clone https://github.com/anacmenezes/consultoria-imobiliaria.git
 
----
+# Acesse o projeto
+$ cd consultoria-imobiliaria
 
-## ⚙️ Instalação
+# Crie o ambiente virtual
+$ python -m venv .venv
 
-Clone o repositório:
+# Ative o ambiente virtual
+$ .\.venv\Scripts\Activate.ps1
 
-git clone https://github.com/anacmenezes/consultoria-imobiliaria.git
+# Instale as dependências
+$ pip install -r requirements.txt
 
-Entre na pasta:
+<h2 id="how-to-use">💡 Como Executar</h2>
 
-cd consultoria-imobiliaria
+Com o ambiente virtual ativado, execute:
+$ python -m imobiliaria.main
 
-Crie o ambiente virtual:
+Para testar o fluxo completo:
+$ python -m imobiliaria.main
 
-python -m venv .venv
+<h2 id="future">🚀 Próximos passos</h2>
 
-Ative o ambiente:
+O projeto foi estruturado para receber novas funcionalidades de Engenharia de IA, como:
 
-.\.venv\Scripts\Activate.ps1
+Implementação de RAG
+Base de conhecimento própria
+Memória para os agentes
+Validação das respostas
+Redução de alucinações
+Observabilidade
+Monitoramento de custos e tokens
+Testes automatizados
+Integração com bancos de dados
+Melhorias na arquitetura multiagente
 
-Instale as dependências:
+<h2 id="author">👩‍💻 Ana Carulina Menezes</h2>
 
-pip install -r requirements.txt
-
----
-
-## 🔐 Configuração
-
-Crie um arquivo .env na raiz do projeto:
-
-OPENAI_API_KEY=sua_chave_aqui
-
-O arquivo .env não deve ser enviado para o GitHub.
-
-Utilize o .env.example como referência.
-
----
-
-## ▶️ Executando o Projeto
-
-Com o ambiente virtual ativado:
-
-python -m imobiliaria.main
-
-O sistema executará o fluxo completo dos agentes.
-
----
-
-## 🧪 Testes
-Testar a Tool de imóveis
-python tests/test_imoveis_tool.py
-Testar a Tool de notícias
-python tests/test_noticias_tool.py
-Testar o Analista de Notícias
-python tests/test_analista_noticias.py
-Testar o Analista Financeiro
-python tests/test_analista_financeiro.py
-Testar o Redator
-python tests/test_redator.py
-Testar a Crew completa
-python -m imobiliaria.main
-
----
-
-## 📊 Exemplo
-
-Entrada:
-
-Rio de Janeiro
-
-O sistema consulta os imóveis disponíveis e pode encontrar resultados como:
-
-Apartamento
-2 quartos
-4 banheiros
-90 m²
-R$ 675.138
-
-e:
-
-Cobertura
-1 quarto
-4 banheiros
-59 m²
-R$ 1.927.052
-
-Esses dados são posteriormente analisados pelos agentes e consolidados pelo Redator.
-
----
-
-## 🧠 Próximas Evoluções
-
-O projeto foi estruturado pensando em futuras evoluções de Engenharia de IA.
-
-🔹 RAG
-
-Adicionar uma base de conhecimento própria contendo:
-
-PDFs
-Documentos
-Regulamentos
-Informações de financiamento
-Dados históricos
-Informações imobiliárias
-
-🔹 Memória
-
-Adicionar mecanismos para manter informações relevantes durante as interações com o cliente.
-
-🔹 Validação
-
-Implementar mecanismos para:
-
-Validar respostas
-Reduzir alucinações
-Verificar consistência dos dados
-Validar informações antes da resposta final
-
-🔹 Testes Automatizados
-
-Expandir a cobertura de testes para garantir maior confiabilidade e estabilidade do sistema.
-
----
-
-## 🎯 Objetivo
-
-Este projeto faz parte da construção de um portfólio voltado para Engenharia de IA, demonstrando conhecimentos práticos em:
-
-Sistemas Multiagentes
-CrewAI
-Python
-LLMs
-Tool Calling
-Orquestração de agentes
-Contexto entre Tasks
-Engenharia de Prompt
-Integração com APIs
-Arquitetura modular
-Testes
-
-👩‍💻 Ana Carulina Menezes
-
-Desenvolvedora em formação com foco em Engenharia de IA, sistemas multiagentes e aplicações com LLMs.
+Projeto desenvolvido como parte da construção de portfólio em Engenharia de IA, com foco em sistemas multiagentes, LLMs, automação e aplicações utilizando Python e CrewAI.

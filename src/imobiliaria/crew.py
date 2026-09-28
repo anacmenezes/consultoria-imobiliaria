@@ -2,6 +2,7 @@ from crewai import Crew, Process
 
 from imobiliaria.agents.corretor import criar_corretor
 from imobiliaria.agents.mercado import criar_analista_mercado
+from imobiliaria.agents.noticias import criar_analista_noticias
 
 from imobiliaria.tasks.buscar_imoveis import (
     criar_task_buscar_imoveis
@@ -9,6 +10,10 @@ from imobiliaria.tasks.buscar_imoveis import (
 
 from imobiliaria.tasks.analisar_mercado import (
     criar_task_analisar_mercado
+)
+
+from imobiliaria.tasks.buscar_noticias import (
+    criar_task_buscar_noticias
 )
 
 
@@ -20,7 +25,9 @@ def criar_crew():
 
     corretor = criar_corretor()
 
-    analista = criar_analista_mercado()
+    analista_mercado = criar_analista_mercado()
+
+    analista_noticias = criar_analista_noticias()
 
     # =========================
     # TASKS
@@ -31,8 +38,12 @@ def criar_crew():
     )
 
     analisar_mercado = criar_task_analisar_mercado(
-        analista,
+        analista_mercado,
         buscar_imoveis
+    )
+
+    buscar_noticias = criar_task_buscar_noticias(
+        analista_noticias
     )
 
     # =========================
@@ -42,11 +53,13 @@ def criar_crew():
     crew = Crew(
         agents=[
             corretor,
-            analista
+            analista_mercado,
+            analista_noticias
         ],
         tasks=[
             buscar_imoveis,
-            analisar_mercado
+            analisar_mercado,
+            buscar_noticias
         ],
         process=Process.sequential,
         verbose=True

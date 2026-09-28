@@ -6,7 +6,7 @@
   <a href="#pre-requisites">Requisitos</a> •
   <a href="#how-to-Installing">Instalando o projeto</a> •
   <a href="#how-to-use">Como executar</a> •
-  <a href="#architecture">Arquitetura</a>
+  <a href="#future">Próximos passos</a>
 </p>
 
 Essa aplicação foi desenvolvida utilizando Python e CrewAI para criação de um sistema de consultoria imobiliária baseado em arquitetura multiagente.
@@ -43,35 +43,35 @@ Primeiro você deve clonar o repositório:
 
 ```bash
 # Clone o repositório
-$ git clone https://github.com/anacmenezes/consultoria-imobiliaria.git
+git clone https://github.com/anacmenezes/consultoria-imobiliaria.git
 ```
 ```
 # Acesse o projeto
-$ cd consultoria-imobiliaria
+cd consultoria-imobiliaria
 ```
 ```
 # Crie o ambiente virtual
-$ python -m venv .venv
+python -m venv .venv
 ```
 ```
 # Ative o ambiente virtual
-$ .\.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 ```
 ```
 # Instale as dependências
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 <h2 id="how-to-use">💡 Como Executar</h2>
 
 Com o ambiente virtual ativado, execute:
 ```
-$ python -m imobiliaria.main
+python -m imobiliaria.main
 ```
 
 Para testar o fluxo completo:
 ```
-$ python -m imobiliaria.main
+python -m imobiliaria.main
 ```
 
 <h2 id="future">🚀 Próximos passos</h2>

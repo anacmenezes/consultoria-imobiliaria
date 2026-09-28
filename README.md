@@ -53,11 +53,11 @@ cd consultoria-imobiliaria
 # Crie o ambiente virtual
 python -m venv .venv
 ```
-```
+```bash
 # Ative o ambiente virtual
 .\.venv\Scripts\Activate.ps1
 ```
-```
+```bash
 # Instale as dependências
 pip install -r requirements.txt
 ```

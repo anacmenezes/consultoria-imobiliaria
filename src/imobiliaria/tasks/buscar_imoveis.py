@@ -7,10 +7,11 @@ def criar_task_buscar_imoveis(corretor):
 
     return Task(
         description=(
-            "Analise os critérios fornecidos pelo cliente e encontre "
-            "imóveis disponíveis que atendam às suas necessidades. "
-            "Utilize a ferramenta de busca de imóveis para consultar "
-            "os dados disponíveis."
+            "Encontre imóveis disponíveis na cidade solicitada pelo cliente: "
+            "{cidade}."
+            "Utilize a ferramenta de busca de imóveis para consultar os "
+            "dados disponíveis. Analise os resultados encontrados e "
+            "apresente as opções relevantes."
         ),
         expected_output=(
             "Uma lista organizada dos imóveis encontrados, contendo "

@@ -41,29 +41,38 @@ Para rodar esse projeto você precisa ter o Python instalado na sua máquina. Ta
 
 Primeiro você deve clonar o repositório:
 
-bash
+```bash
 # Clone o repositório
 $ git clone https://github.com/anacmenezes/consultoria-imobiliaria.git
-
+```
+```
 # Acesse o projeto
 $ cd consultoria-imobiliaria
-
+```
+```
 # Crie o ambiente virtual
 $ python -m venv .venv
-
+```
+```
 # Ative o ambiente virtual
 $ .\.venv\Scripts\Activate.ps1
-
+```
+```
 # Instale as dependências
 $ pip install -r requirements.txt
+```
 
 <h2 id="how-to-use">💡 Como Executar</h2>
 
 Com o ambiente virtual ativado, execute:
+```
 $ python -m imobiliaria.main
+```
 
 Para testar o fluxo completo:
+```
 $ python -m imobiliaria.main
+```
 
 <h2 id="future">🚀 Próximos passos</h2>
 

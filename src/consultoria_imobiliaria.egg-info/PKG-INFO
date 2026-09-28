@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: consultoria-imobiliaria
+Version: 0.1.0
+Summary: Sistema multiagente de consultoria imobiliária
+Requires-Python: >=3.11

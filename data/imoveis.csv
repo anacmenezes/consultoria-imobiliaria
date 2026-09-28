@@ -1,0 +1,21 @@
+id,cidade,tipo,quartos,banheiros,area_m2,preco
+1,Campos dos Goytacazes,Apartamento,4,2,179,574779
+2,Campos dos Goytacazes,Cobertura,2,3,151,1384911
+3,São Paulo,Apartamento,1,2,103,1370981
+4,Niterói,Apartamento,5,3,221,505954
+5,Niterói,Apartamento,4,2,169,494434
+6,Campos dos Goytacazes,Cobertura,4,4,224,1789509
+7,Campos dos Goytacazes,Cobertura,5,4,204,1979665
+8,Niterói,Cobertura,1,1,180,1539190
+9,Belo Horizonte,Casa,5,4,123,686433
+10,São Paulo,Apartamento,2,2,235,1505187
+11,Campos dos Goytacazes,Cobertura,5,4,176,748311
+12,Niterói,Apartamento,1,1,126,1967487
+13,São Paulo,Cobertura,3,4,156,1863195
+14,Rio de Janeiro,Apartamento,2,4,90,675138
+15,Campos dos Goytacazes,Casa,4,4,48,418837
+16,Belo Horizonte,Cobertura,1,4,172,1261409
+17,Campos dos Goytacazes,Apartamento,3,1,46,1937609
+18,Rio de Janeiro,Cobertura,1,4,59,1927052
+19,São Paulo,Casa,5,2,219,1409404
+20,Niterói,Cobertura,2,1,217,508641

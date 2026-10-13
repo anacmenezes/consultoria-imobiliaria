@@ -1,49 +1,47 @@
 from crewai.tools import BaseTool
+from crewai_tools import SerperDevTool
 from pydantic import BaseModel, Field
-from ddgs import DDGS
-
 
 class NoticiasInput(BaseModel):
+    tema: str = Field(
+        default="mercado imobiliário",
+        description="Tema das notícias a pesquisar."
+    )
     cidade: str = Field(
-        ...,
-        description="Cidade cujo mercado imobiliário deve ser pesquisado."
+        default="Brasil",
+        description="Cidade ou região relacionada às notícias."
     )
 
 
 class NoticiasTool(BaseTool):
-
     name: str = "buscar_noticias_imobiliarias"
-
     description: str = (
-        "Pesquisa notícias recentes relacionadas ao mercado "
-        "imobiliário de uma determinada cidade."
+        "Pesquisa notícias sobre o mercado imobiliário, "
+        "economia, juros e acontecimentos relevantes para o setor."
     )
-
     args_schema: type[BaseModel] = NoticiasInput
 
-    def _run(self, cidade: str) -> str:
+    def _run(
+        self,
+        tema: str = "mercado imobiliário",
+        cidade: str = "Brasil"
+    ) -> str:
+        consulta = (
+            f"notícias sobre {tema} em {cidade} "
+            "recentes economia imóveis"
+        )
 
-        consulta = f"mercado imobiliário {cidade}"
+        ferramenta = SerperDevTool()
+        resultados = ferramenta.run(search_query=consulta)
 
-        resultados = []
+        return (
+            f"Tema: {tema}\n"
+            f"Região: {cidade}\n"
+            "Confira a data de publicação, a fonte e os links. "
+            "A pesquisa não garante que todas as notícias sejam "
+            "recentes ou que os fatos estejam verificados.\n"
+            f"Resultados encontrados:\n{resultados}"
+        )
 
-        with DDGS() as ddgs:
 
-            noticias = ddgs.news(
-                consulta,
-                max_results=5
-            )
-
-            for noticia in noticias:
-
-                resultados.append({
-                    "titulo": noticia.get("title"),
-                    "descricao": noticia.get("body"),
-                    "url": noticia.get("url"),
-                    "data": noticia.get("date")
-                })
-
-        if not resultados:
-            return f"Nenhuma notícia encontrada para {cidade}."
-
-        return str(resultados)
+noticias_tool = NoticiasTool()

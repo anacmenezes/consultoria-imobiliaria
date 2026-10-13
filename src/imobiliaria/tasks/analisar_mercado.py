@@ -1,23 +1,24 @@
 from crewai import Task
 
 
-def criar_task_analisar_mercado(analista, task_buscar_imoveis):
+def criar_analisar_mercado(mercado, contexto):
 
     return Task(
+
         description=(
-            "Analise os imóveis encontrados pelo corretor "
-            "para a cidade de {cidade}. "
-            "Avalie os preços, tipos de imóveis, quantidade "
-            "de quartos, áreas e demais características. "
-            "Identifique padrões e apresente uma análise "
-            "objetiva do conjunto de imóveis."
+        "Analise os dados imobiliários coletados para a região solicitada. "
+        "Identifique padrões de preços, características dos imóveis, diferenças regionais e tendências observáveis. "
+        "Considere o período, a origem e a representatividade dos dados. "
+        "Não invente estatísticas nem trate preços anunciados como valores de transações concluídas."
+    ),
+    expected_output=(
+        "Um relatório de mercado contendo a região analisada, "
+        "a quantidade e o perfil dos imóveis da amostra, "
+        "as faixas de preços observadas, os padrões identificados, "
+        "as fontes disponíveis e as limitações dos dados."
         ),
-        expected_output=(
-            "Uma análise objetiva do mercado imobiliário "
-            "com base nos imóveis encontrados, destacando "
-            "faixas de preço, características predominantes "
-            "e observações relevantes para o cliente."
-        ),
-        agent=analista,
-        context=[task_buscar_imoveis]
+
+        agent=mercado,
+
+        context=[contexto]
     )

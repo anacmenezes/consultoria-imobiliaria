@@ -1,31 +1,25 @@
 from crewai import Agent
-from langchain_openai import ChatOpenAI
+from ..config import MODEL_NAME
+from ..tools.imoveis_tool import imoveis_tool
 
-from imobiliaria.config import MODEL_NAME
-from imobiliaria.tools.imoveis_tool import ImoveisTool
+def criar_corretor():
+    return Agent(
+        role="Corretor Imobiliário",
+        goal="Buscar e organizar imóveis em {cidade} conforme os critérios informados pelo cliente.",
+        backstory="""
+            Você é um profissional especializado no mercado
+            imobiliário de {cidade}.
 
+            Sua função é buscar e organizar imóveis compatíveis
+            com os critérios do cliente, apresentando informações
+            claras e estruturadas.
 
-def criar_corretor() -> Agent:
-
-    llm = ChatOpenAI(
-        model=MODEL_NAME,
-        temperature=0
-    )
-
-    corretor = Agent(
-        role="Corretor de imóveis",
-        goal=(
-            "Encontrar imóveis que atendam aos critérios "
-            "informados pelo cliente."
-        ),
-        backstory=(
-            "Você é um corretor de imóveis especializado "
-            "em analisar imóveis disponíveis e identificar "
-            "opções adequadas às necessidades dos clientes."
-        ),
-        tools=[ImoveisTool()],
-        llm=llm,
+            Não invente anúncios, preços ou características.
+            Quando os dados forem insuficientes, informe
+            as limitações encontradas.
+        """,
+        llm=MODEL_NAME,
+        tools=[imoveis_tool],
+        allow_delegation=False,
         verbose=True
     )
-
-    return corretor

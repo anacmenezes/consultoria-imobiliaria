@@ -1,20 +1,25 @@
 from crewai import Task
 
 
-def criar_task_buscar_noticias(analista):
+def criar_buscar_noticias(noticias):
 
     return Task(
+
         description=(
-            "Pesquise e analise notícias recentes relacionadas "
-            "ao mercado imobiliário de {cidade}. "
-            "Identifique informações relevantes sobre preços, "
-            "financiamento, juros, oferta, demanda ou mudanças "
-            "que possam afetar o mercado local."
+        "Pesquise notícias relevantes para o mercado imobiliário "
+        "da região ou do tema solicitado. Priorize fontes "
+        "identificáveis e informações recentes quando a atualidade "
+        "for relevante. Examine a data de publicação e a relação "
+        "da notícia com o mercado. Não invente notícias, fontes "
+        "ou datas."
+    ),
+    expected_output=(
+        "Uma lista estruturada de notícias relevantes contendo "
+        "título, fonte, data de publicação, resumo, URL quando "
+        "disponível e possível impacto no mercado imobiliário. "
+        "Sinalize quando não houver notícias suficientes ou "
+        "quando a atualidade das informações não puder ser verificada."
         ),
-        expected_output=(
-            "Um resumo objetivo das notícias relevantes encontradas, "
-            "incluindo a informação principal e sua possível relação "
-            "com o mercado imobiliário da cidade."
-        ),
-        agent=analista
+
+        agent=noticias
     )

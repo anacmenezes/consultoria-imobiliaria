@@ -1,33 +1,23 @@
 from crewai import Agent
-from langchain_openai import ChatOpenAI
+from ..config import MODEL_NAME
 
-from imobiliaria.config import MODEL_NAME
-from imobiliaria.tools.noticias_tool import NoticiasTool
+def criar_noticias():
+    return Agent(
+        role="Analista de Notícias do Mercado Imobiliário",
+        goal="Identificar e analisar notícias relevantes para o mercado imobiliário, destacando acontecimentos que possam influenciar preços, aluguéis, crédito, demanda e decisões de investimento.",
+    backstory="""
+            Você é um analista especializado em notícias econômicas
+            e imobiliárias. Sua função é examinar as notícias coletadas,
+            identificar os acontecimentos mais relevantes e explicar
+            seus possíveis impactos no mercado imobiliário.
 
-
-def criar_analista_noticias() -> Agent:
-
-    llm = ChatOpenAI(
-        model=MODEL_NAME,
-        temperature=0
-    )
-
-    analista = Agent(
-        role="Analista de notícias do mercado imobiliário",
-        goal=(
-            "Pesquisar e analisar notícias relevantes sobre o "
-            "mercado imobiliário da cidade solicitada pelo cliente."
-        ),
-        backstory=(
-            "Você é um analista especializado em acompanhar "
-            "notícias econômicas e imobiliárias. Sua função é "
-            "identificar informações recentes que possam "
-            "influenciar preços, financiamento, oferta ou "
-            "demanda de imóveis."
-        ),
-        tools=[NoticiasTool()],
-        llm=llm,
+            Considere a data de publicação, a fonte e o contexto de
+            cada notícia. Diferencie fatos confirmados de opiniões
+            e projeções. Não invente notícias, fontes, datas ou
+            acontecimentos. Quando as evidências forem insuficientes,
+            informe essa limitação.
+    """,
+        llm=MODEL_NAME,
+        allow_delegation=False,
         verbose=True
     )
-
-    return analista

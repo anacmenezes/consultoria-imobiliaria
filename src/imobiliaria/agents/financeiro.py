@@ -1,33 +1,22 @@
 from crewai import Agent
-from langchain_openai import ChatOpenAI
+from ..config import MODEL_NAME
 
-from imobiliaria.config import MODEL_NAME
+def criar_financeiro():
+    return Agent(
+        role="Analista Financeiro Imobiliário",
+        goal="Avaliar a viabilidade financeira de oportunidades imobiliárias, analisando preços de aquisição, receitas estimadas de aluguel, despesas, rentabilidade e riscos financeiros com base nos dados fornecidos.",
+    backstory="""
+            Você é um analista financeiro especializado em investimentos
+            imobiliários. Sua função é interpretar dados financeiros,
+            avaliar custos e receitas e identificar fatores que podem
+            afetar a rentabilidade de um imóvel.
 
-
-def criar_analista_financeiro() -> Agent:
-
-    llm = ChatOpenAI(
-        model=MODEL_NAME,
-        temperature=0
-    )
-
-    analista = Agent(
-        role="Analista financeiro imobiliário",
-        goal=(
-            "Analisar os aspectos financeiros relacionados aos "
-            "imóveis encontrados e fornecer informações úteis "
-            "para a tomada de decisão do cliente."
-        ),
-        backstory=(
-            "Você é um analista financeiro especializado no "
-            "mercado imobiliário. Sua função é analisar preços "
-            "de imóveis, comparar valores e, quando houver dados "
-            "suficientes, avaliar cenários de financiamento. "
-            "Nunca invente taxas, juros, renda ou condições "
-            "financeiras que não tenham sido fornecidas."
-        ),
-        llm=llm,
+            Utilize os cálculos e os dados disponibilizados pelo sistema.
+            Não invente valores nem apresente estimativas como garantias
+            de retorno. Quando faltarem informações relevantes, explicite
+            as limitações da análise e identifique os dados necessários.
+    """,
+        llm=MODEL_NAME,
+        allow_delegation=False,
         verbose=True
     )
-
-    return analista

@@ -1,31 +1,24 @@
 from crewai import Agent
-from langchain_openai import ChatOpenAI
+from ..config import MODEL_NAME
 
-from imobiliaria.config import MODEL_NAME
+def criar_mercado():
+    return Agent(
+        role="Analista de Mercado Imobiliário",
+        goal="Analisar dados do mercado imobiliário para identificar tendências de preços, padrões regionais, características da oferta e oportunidades relevantes para o cliente.",
+    backstory="""
+            Você é um analista especializado em inteligência de mercado
+            imobiliário. Examina dados de imóveis, preços anunciados,
+            valores estimados de aluguel e indicadores regionais para
+            identificar tendências e diferenças entre localidades.
 
-
-def criar_analista_mercado() -> Agent:
-
-    llm = ChatOpenAI(
-        model=MODEL_NAME,
-        temperature=0
-    )
-
-    analista = Agent(
-        role="Analista de mercado imobiliário",
-        goal=(
-            "Analisar as condições do mercado imobiliário "
-            "e identificar informações relevantes para "
-            "a tomada de decisão do cliente."
-        ),
-        backstory=(
-            "Você é um analista especializado no mercado "
-            "imobiliário. Sua função é interpretar dados de "
-            "preços, localização e características dos imóveis "
-            "e apresentar uma análise objetiva."
-        ),
-        llm=llm,
+            Baseie suas conclusões nos dados coletados e na metodologia
+            utilizada. Diferencie preços anunciados de valores de
+            transações efetivamente realizadas. Não invente estatísticas
+            nem apresente amostras limitadas como se representassem
+            todo o mercado. Informe a origem, o período e as limitações
+            dos dados sempre que essas informações estiverem disponíveis.
+    """,
+        llm=MODEL_NAME,
+        allow_delegation=False,
         verbose=True
     )
-
-    return analista

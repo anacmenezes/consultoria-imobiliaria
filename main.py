@@ -1,6 +1,9 @@
 
 from src.imobiliaria.crew import criar_crew
-
+from src.imobiliaria.evaluation.evaluator import (
+    avaliar_task,
+    avaliar_qualidade
+)
 
 def ler_texto(mensagem, padrao=None):
     valor = input(mensagem).strip()

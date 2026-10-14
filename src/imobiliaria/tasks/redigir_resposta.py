@@ -1,5 +1,6 @@
 from crewai import Task
 
+from src.imobiliaria.models.relatorio import RelatorioImobiliario
 
 def criar_redigir_resposta(redator, contexto):
 
@@ -25,5 +26,6 @@ def criar_redigir_resposta(redator, contexto):
 
         agent=redator,
 
-        context=[contexto]
+        context=[contexto],
+        output_pydantic=RelatorioImobiliario
     )

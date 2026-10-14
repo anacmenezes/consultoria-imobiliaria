@@ -1,9 +1,12 @@
 
 from src.imobiliaria.crew import criar_crew
+from src.imobiliaria.observability.logger import logger
+from src.imobiliaria.observability.metrics import registrar_execucao
 from src.imobiliaria.evaluation.evaluator import (
     avaliar_task,
     avaliar_qualidade
 )
+import time
 
 def ler_texto(mensagem, padrao=None):
     valor = input(mensagem).strip()
@@ -47,6 +50,10 @@ def ler_preco_maximo():
 
 
 def main():
+
+    logger.info("Iniciando análise de mercado")
+    inicio = time.time()
+
     print("\n===== CONSULTORIA IMOBILIÁRIA =====\n")
     print("Informe os critérios desejados para a busca.\n")
 
@@ -95,6 +102,8 @@ def main():
         crew = criar_crew()
 
         resultado = crew.kickoff(inputs=inputs)
+
+        registrar_execucao(resultado, inicio)
 
         print("\n===== RESULTADO FINAL =====\n")
         print(resultado)

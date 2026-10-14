@@ -4,8 +4,12 @@ from urllib.parse import urlparse
 
 from crewai.tools import BaseTool
 from crewai_tools import SerperDevTool
+from crewai.tools import tool
 from pydantic import BaseModel, Field
 
+from ..rag.retriever import search
+
+search_tool = SerperDevTool()
 
 class BuscaImoveisInput(BaseModel):
     cidade: str = Field(

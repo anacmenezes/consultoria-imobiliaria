@@ -1,0 +1,19 @@
+﻿# Mercado imobiliário brasileiro
+
+## Financiamento imobiliário
+O financiamento imobiliário permite adquirir um imóvel por meio de crédito concedido por uma instituição financeira. A análise considera renda, histórico de crédito, valor do imóvel, entrada e capacidade de pagamento.
+
+## Sistemas de amortização
+No Sistema de Amortização Constante (SAC), a amortização do principal é constante e as parcelas tendem a diminuir ao longo do tempo. Na Tabela Price, as prestações são geralmente constantes durante o período contratual, considerando as condições previstas no contrato.
+
+## Custos de aquisição
+A compra de um imóvel pode envolver ITBI, registro em cartório, escritura quando aplicável, tarifas bancárias e despesas de avaliação. Os valores e as obrigações variam conforme o município, a operação e as regras aplicáveis.
+
+## Análise de localização
+A avaliação de uma região pode considerar infraestrutura, transporte público, segurança, comércio, escolas, serviços de saúde, liquidez e perspectivas de desenvolvimento urbano.
+
+## Avaliação de imóveis
+A comparação entre imóveis deve considerar localização, área privativa, conservação, idade da construção, vagas de garagem, condomínio, características do terreno e preços de imóveis semelhantes na região.
+
+## Cuidados na compra
+Antes de comprar, é importante verificar a matrícula atualizada do imóvel, eventuais ônus, a documentação do vendedor, a regularidade da construção e as condições do financiamento. Situações específicas devem ser analisadas por profissionais habilitados.

@@ -560,6 +560,21 @@ class BuscaImoveisTool(BaseTool):
             resultados_gerais = pesquisar(serper, consulta_geral)
             resultados_portais = pesquisar(serper, consulta_portais)
 
+            print("\n=== DEBUG BUSCA DE IMÓVEIS ===")
+            print(f"Consulta geral: {consulta_geral}")
+            print(f"Resultados gerais: {len(resultados_gerais)}")
+            print(f"Consulta portais: {consulta_portais}")
+            print(f"Resultados portais: {len(resultados_portais)}")
+
+            for item in (resultados_gerais + resultados_portais)[:5]:
+                print({
+                    "title": item.get("title"),
+                    "link": item.get("link"),
+                    "snippet": item.get("snippet"),
+                })
+
+            print("=== FIM DEBUG ===\n")
+
         except Exception as erro:
             return f"Erro ao pesquisar imóveis no Serper: {erro}"
 

@@ -266,8 +266,8 @@ interativa do FastAPI.
 
 <p>
 <strong>API:</strong><br>
-<a href="https://consultoria-imobiliaria-api.ashysky-801299e3.brazilsouth.azurecontainerapps.io/docs">
-https://consultoria-imobiliaria-api.ashysky-801299e3.brazilsouth.azurecontainerapps.io/docs
+<a href="https://realestate-intel.lovable.app/">
+https://realestate-intel.lovable.app/
 </a>
 </p>
 

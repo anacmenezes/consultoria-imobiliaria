@@ -266,8 +266,8 @@ interativa do FastAPI.
 
 <p>
 <strong>API:</strong><br>
-<a href="https://realestate-intel.lovable.app/">
-https://realestate-intel.lovable.app/
+<a href="https://consultoria-imobiliaria-api.ashysky-801299e3.brazilsouth.azurecontainerapps.io">
+https://consultoria-imobiliaria-api.ashysky-801299e3.brazilsouth.azurecontainerapps.io
 </a>
 </p>
 
@@ -304,6 +304,13 @@ O frontend permite:
 <p>
 A comunicação entre frontend e backend é realizada utilizando
 <strong>HTTP/JSON</strong>.
+</p>
+
+<p>
+<strong>Frontend publicado:</strong><br>
+<a href="https://realestate-intel.lovable.app/">
+https://realestate-intel.lovable.app/o
+</a>
 </p>
 
 <h2 id="security">🔐 Segurança</h2>

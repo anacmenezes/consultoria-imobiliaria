@@ -32,7 +32,7 @@ A aplicação está publicada no Azure Container Apps, com interface e API execu
 
 <p align="center">
   <a href="https://realestate-intel.lovable.app/">
-    <img src="https://img.shields.io/badge/Acessar-Farma%20Aura-2E8B57?style=for-the-badge" alt="Acessar Consultoria Imobiliária">
+    <img src="https://img.shields.io/badge/Acessar-Consultoria%20Imobili%C3%A1ria-2E8B57?style=for-the-badge" alt="Acessar Consultoria Imobiliária">
   </a>
 </p>
 

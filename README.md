@@ -26,6 +26,16 @@
 <p>
 Essa aplicação foi desenvolvida utilizando Python e CrewAI para criação de um sistema de consultoria imobiliária baseado em arquitetura multiagente. O sistema utiliza agentes especializados para buscar imóveis, analisar o mercado imobiliário, pesquisar notícias, realizar análises financeiras e gerar uma resposta consolidada para o cliente.
 
+<p>
+A aplicação está publicada no Azure Container Apps, com interface e API executadas em serviços separados.
+</p>
+
+<p align="center">
+  <a href="https://realestate-intel.lovable.app/">
+    <img src="https://img.shields.io/badge/Acessar-Farma%20Aura-2E8B57?style=for-the-badge" alt="Acessar Consultoria Imobiliária">
+  </a>
+</p>
+
 O projeto possui uma arquitetura completa envolvendo:
 </p>
 
